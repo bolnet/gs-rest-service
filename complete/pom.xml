@@ -16,10 +16,31 @@
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- JSON processing -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+
+		<!-- JRecord library for EBCDIC/COBOL file processing (Process 2) -->
+		<dependency>
+			<groupId>net.sf.jrecord</groupId>
+			<artifactId>jrecord</artifactId>
+			<version>0.93.3</version>
+		</dependency>
+
+		<!-- cb2xml - COBOL copybook parser (required by JRecord) -->
+		<dependency>
+			<groupId>net.sf.cb2xml</groupId>
+			<artifactId>cb2xml</artifactId>
+			<version>1.01.08</version>
 		</dependency>
 
 		<dependency>
