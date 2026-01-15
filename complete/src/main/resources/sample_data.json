@@ -1,0 +1,23 @@
+[
+  {
+    "CUST-ID": 12345678,
+    "CUST-NAME": "JOHN SMITH",
+    "CUST-BALANCE": 15234.56,
+    "CUST-STATUS": "A",
+    "CUST-DATE": 20260115
+  },
+  {
+    "CUST-ID": 87654321,
+    "CUST-NAME": "JANE DOE",
+    "CUST-BALANCE": -5000.0,
+    "CUST-STATUS": "I",
+    "CUST-DATE": 20251220
+  },
+  {
+    "CUST-ID": 11112222,
+    "CUST-NAME": "BOB WILSON",
+    "CUST-BALANCE": 99999.99,
+    "CUST-STATUS": "A",
+    "CUST-DATE": 20260101
+  }
+]
