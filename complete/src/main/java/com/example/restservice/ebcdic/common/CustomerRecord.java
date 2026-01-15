@@ -1,21 +1,21 @@
-package com.example.restservice.ebcdic;
+package com.example.restservice.ebcdic.common;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigDecimal;
 
 /**
- * Represents a customer record that maps to the COBOL copybook structure.
+ * Customer record model matching the COBOL copybook structure.
  * 
- * Field Layout:
+ * Record Layout (52 bytes total):
  * - CUST-ID: 8 bytes, NUMERIC (PIC 9(8))
  * - CUST-NAME: 30 bytes, ALPHA (PIC X(30))
  * - CUST-BALANCE: 5 bytes, PACKED DECIMAL (PIC S9(7)V99 COMP-3)
  * - CUST-STATUS: 1 byte, ALPHA (PIC X(1))
  * - CUST-DATE: 8 bytes, NUMERIC (PIC 9(8))
- * 
- * Total Record Length: 52 bytes
  */
 public class CustomerRecord {
+    
+    public static final int RECORD_LENGTH = 52;
     
     @JsonProperty("CUST-ID")
     private long custId;
@@ -32,7 +32,6 @@ public class CustomerRecord {
     @JsonProperty("CUST-DATE")
     private int custDate;
     
-    // Default constructor for JSON deserialization
     public CustomerRecord() {
     }
     
@@ -46,45 +45,20 @@ public class CustomerRecord {
     }
     
     // Getters and Setters
-    public long getCustId() {
-        return custId;
-    }
+    public long getCustId() { return custId; }
+    public void setCustId(long custId) { this.custId = custId; }
     
-    public void setCustId(long custId) {
-        this.custId = custId;
-    }
+    public String getCustName() { return custName; }
+    public void setCustName(String custName) { this.custName = custName; }
     
-    public String getCustName() {
-        return custName;
-    }
+    public BigDecimal getCustBalance() { return custBalance; }
+    public void setCustBalance(BigDecimal custBalance) { this.custBalance = custBalance; }
     
-    public void setCustName(String custName) {
-        this.custName = custName;
-    }
+    public String getCustStatus() { return custStatus; }
+    public void setCustStatus(String custStatus) { this.custStatus = custStatus; }
     
-    public BigDecimal getCustBalance() {
-        return custBalance;
-    }
-    
-    public void setCustBalance(BigDecimal custBalance) {
-        this.custBalance = custBalance;
-    }
-    
-    public String getCustStatus() {
-        return custStatus;
-    }
-    
-    public void setCustStatus(String custStatus) {
-        this.custStatus = custStatus;
-    }
-    
-    public int getCustDate() {
-        return custDate;
-    }
-    
-    public void setCustDate(int custDate) {
-        this.custDate = custDate;
-    }
+    public int getCustDate() { return custDate; }
+    public void setCustDate(int custDate) { this.custDate = custDate; }
     
     @Override
     public String toString() {
